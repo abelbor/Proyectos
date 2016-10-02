@@ -87,6 +87,7 @@ bool_t ActualizaMef( tecla_t * tecla, uint8_t digitalIn ){
 			inicial=0;
 			delayConfig(&teclaDelay, 1);
 		}
+
 bool_t rta=0;
 
 	//tecla->digitalInput = digitalIn; //asigna que tecla recibe
@@ -122,7 +123,7 @@ bool_t rta=0;
 			else{
 				if (digitalRead(tecla->digitalInput)) {
 					tecla->estadoEnum = UP;
-					rta=!rta;//tecla->estadoTec=ON;//accion
+					rta=1;//tecla->estadoTec=ON;//accion
 				}
 				else
 					tecla->estadoEnum = DOWN;
