@@ -116,6 +116,6 @@ int main(void)
 
 }//while
 
-	return 0;
+	return 0;// esto lo comento para ver el push pull de casa a trabajo
 }
 
