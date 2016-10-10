@@ -105,17 +105,41 @@ int main(void)
 
 	derecha=ActualizaMef(&T2,TEC2);
 	if (derecha ){
-		//ledOn(&lamparaAzul);
-		//			AnguloAsignado=AnguloAsignado-Step;
-		//			if ( !delayRead( &delay2 ) )
-		//				servoWrite( SERVO0, AnguloAsignado );
+
+		if (step==15){
+					ledOn(&lamparaVerde);
+					ledOff(&lamparaRojo);
+					ledOff(&lamparaAmarillo);
+					AnguloAsignado=AnguloAsignado-step;
+					if(AnguloAsignado<0)AnguloAsignado=0;
+					if ( !delayRead( &delay2 ) ){
+						servoWrite( SERVO0, AnguloAsignado );}
+				}
+				if (step==30){
+					ledOff(&lamparaVerde);
+					ledOn(&lamparaRojo);
+					ledOff(&lamparaAmarillo);
+					AnguloAsignado=AnguloAsignado-step;
+					if(AnguloAsignado<0)AnguloAsignado=0;
+					if ( !delayRead( &delay2 ) ){
+						servoWrite( SERVO0, AnguloAsignado );}
+				}
+				if (step==45){
+					ledOff(&lamparaVerde);
+					ledOff(&lamparaRojo);
+					ledOn(&lamparaAmarillo);
+					AnguloAsignado=AnguloAsignado-step;
+					if(AnguloAsignado<0)AnguloAsignado=0;
+					if ( !delayRead( &delay2 ) ){
+						servoWrite( SERVO0, AnguloAsignado );}
+				}
+
+
 	}//IF DERECHA
-	//		else{
-	//			if(AnguloAsignado>180)AnguloAsignado=0;
-	//		}
+
 
 }//while
 
-	return 0;
+	return 0;// esto lo comento para ver el push pull de casa a trabajo
 }
 
